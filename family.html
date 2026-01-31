@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Legendary Joint Family Tree</title>
+<link rel="stylesheet" href="style.css">
+<style>
+    *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI", sans-serif;
+}
+
+body{
+    background: linear-gradient(#fffbeb, #dcfce7);
+    text-align:center;
+    padding:20px;
+}
+
+h1{
+    font-size:42px;
+    color:#166534;
+}
+
+.subtitle{
+    margin-bottom:40px;
+    color:#92400e;
+    font-style:italic;
+}
+
+/* Tree */
+.tree ul{
+    padding-top:20px;
+    position:relative;
+    display:flex;
+    justify-content:center;
+    animation:grow 2s ease;
+}
+
+@keyframes grow{
+    from{opacity:0; transform:scaleY(0);}
+    to{opacity:1; transform:scaleY(1);}
+}
+
+.tree li{
+    list-style:none;
+    padding:20px 10px 0;
+    position:relative;
+}
+
+/* Branch lines */
+.tree li::before,
+.tree li::after{
+    content:'';
+    position:absolute;
+    top:0;
+    width:50%;
+    height:20px;
+    border-top:3px solid #166534;
+}
+
+.tree li::before{
+    right:50%;
+    border-right:3px solid #166534;
+}
+
+.tree li::after{
+    left:50%;
+    border-left:3px solid #166534;
+}
+
+.tree li:only-child::before,
+.tree li:only-child::after{
+    display:none;
+}
+
+.tree ul ul::before{
+    content:'';
+    position:absolute;
+    top:0;
+    left:50%;
+    border-left:3px solid #166534;
+    height:20px;
+}
+
+/* Member */
+.member{
+    width:130px;
+    height:130px;
+    background:white;
+    border-radius:50%;
+    border:4px solid #16a34a;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 8px 18px rgba(0,0,0,0.25);
+    transition:0.3s;
+}
+
+.member img{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #166534;
+}
+
+.member span{
+    font-size:12px;
+    font-weight:600;
+    margin-top:5px;
+}
+
+/* Color roles */
+.root{ border-color:#92400e; }
+.parent{ border-color:#2563eb; }
+.child{ border-color:#2563eb; }
+
+/* Hover */
+.member:hover{
+    transform:scale(1.12);
+    box-shadow:0 0 25px #22c55e;
+}
+
+/* Explanation */
+.explain{
+    margin-top:50px;
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+.explain h2{
+    color:#166534;
+    margin-bottom:10px;
+}
+
+/* Mobile Responsive */
+@media(max-width:768px){
+    .member{
+        width:100px;
+        height:100px;
+    }
+    .member img{
+        width:50px;
+        height:50px;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<h1>🌳 My Joint Family Tree</h1>
+<p class="subtitle">“Family is where life begins and love never ends”</p>
+
+<div class="tree">
+
+<ul>
+<li>
+
+    <ul>
+    <li>
+        <div class="member">
+            <img src="baba.jpeg">
+            <span>Grandfather</span>
+        </div>
+
+        <ul>
+        <li>
+            
+
+            <ul>
+            <li>
+                <div class="member">
+                    <img src="dadi.jpeg">
+                    <span>Grandmother</span>
+                </div>
+
+                <ul>
+                    <li>
+                        <div class="member parent">
+                            <img src="father.jpg">
+                            <span>Father</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="member parent">
+                            <img src="mother.jpg">
+                            <span>Mother</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="member parent">
+                            <img src="uncle.jpg">
+                            <span>Uncle</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="member parent">
+                            <img src="aunt.jpg">
+                            <span>Aunt</span>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul>
+                    <li>
+                        <div class="member child">
+                            <img src="me.jpg">
+                            <span>Uncle</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="member child">
+                            <img src="a.jpeg">
+                            <span>Me</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="member child">
+                            <img src="sister.jpg">
+                            <span>Sister</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="member child">
+                            <img src="s.jpeg">
+                            <span>Sister & Me</span>
+                        </div>
+                    </li>
+                </ul>
+
+            </li>
+            </ul>
+
+        </li>
+        </ul>
+
+    </li>
+    </ul>
+
+</li>
+</ul>
+
+</div>
+
+<!-- Explanation Section -->
+<div class="explain">
+<h2>📘 Project Explanation</h2>
+<p>
+This is my <b>Joint Family Tree</b>.  
+It shows four generations living together.  
+The tree structure represents strong family bonds.  
+Each circle shows a family member with their role.  
+This project is created using <b>HTML and CSS only</b>.
+</p>
+</div>
+
+</body>
+</html>
